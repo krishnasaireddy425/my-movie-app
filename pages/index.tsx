@@ -50,8 +50,19 @@ export default function Home() {
     return (
       <div style={{ textAlign: "center", marginTop: "50px" }}>
         <h1>Movie Fun Facts</h1>
-        <p>Sign in to get started</p>
-        <button onClick={() => signIn("google")}>
+        <h3 style={{ fontWeight: "normal" }}>Sign in to get started</h3>
+        <button 
+          onClick={() => signIn("google")}
+          style={{ 
+            padding: "10px 20px", 
+            fontSize: "16px", 
+            backgroundColor: "#4285f4", 
+            color: "white", 
+            border: "none", 
+            borderRadius: "5px", 
+            cursor: "pointer" 
+          }}
+        >
           Sign in with Google
         </button>
       </div>
@@ -81,7 +92,20 @@ export default function Home() {
         />
         <h2>{session.user.name}</h2>
         <p>{session.user.email}</p>
-        <button onClick={() => signOut()}>Logout</button>
+        <button 
+          onClick={() => signOut()}
+          style={{ 
+            padding: "8px 16px", 
+            backgroundColor: "#dc3545", 
+            color: "white", 
+            border: "none", 
+            borderRadius: "4px", 
+            cursor: "pointer",
+            marginTop: "1rem"
+          }}
+        >
+          Logout
+        </button>
       </div>
 
       {!favorite && showMovieForm && (
@@ -96,7 +120,19 @@ export default function Home() {
               required
               style={{ padding: "8px", marginRight: "10px", width: "200px" }}
             />
-            <button type="submit">Save</button>
+            <button 
+              type="submit"
+              style={{
+                padding: "8px 16px",
+                backgroundColor: "#28a745",
+                color: "white",
+                border: "none",
+                borderRadius: "4px",
+                cursor: "pointer"
+              }}
+            >
+              Save
+            </button>
           </form>
         </div>
       )}
